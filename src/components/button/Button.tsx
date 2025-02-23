@@ -7,10 +7,7 @@ type Props = {
     disabled?: boolean
 }
 
-
 export const Button = ({callback, title, disabled}: Props) => {
-
-
 
     return (
         <>

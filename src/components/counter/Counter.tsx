@@ -1,12 +1,12 @@
 import S from './Counter.module.css'
+import {useSelector} from "react-redux";
 
-type Props = {
-    count: number
-    maxValue: number
-}
-export const Counter = ({count, maxValue}: Props) => {
+export const Counter = () => {
+
+    const {count, maxValueGl} = useSelector((state: any) => state.counter);
+
     return (
-        <span className={S.counter} style={count >= maxValue ? {color: 'red'} : {color: ''}}>
+        <span className={S.counter} style={count >= maxValueGl ? {color: 'red'} : {color: ''}}>
             {count}
         </span>
     );

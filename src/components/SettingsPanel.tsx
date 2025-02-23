@@ -2,17 +2,20 @@ import {Wrapper} from "./wrapper/Wrapper.tsx";
 import {Button} from "./button/Button.tsx";
 import {Input} from "./input/Input.tsx";
 import {useState} from "react";
-
-type Props = {
-    set: (maxValue: number, startValue: number) => void
-    maxValueGl: number
-    startValueGl: number
-}
-export const SettingsPanel = ({set, maxValueGl, startValueGl}: Props) => {
+import {setValuesAC} from "../store/counterReducer.ts";
+import {useAppDispatch} from "../store/useAppDispatch.ts";
+import {useSelector} from "react-redux";
+import {RootState} from "../store/store.ts";
 
 
-    const [maxValue, setMaxValue] = useState(maxValueGl)
-    const [startValue, setStartValue] = useState(startValueGl)
+export const SettingsPanel = () => {
+
+    const { maxValueGl, startValueGl } = useSelector((state: RootState) => state.counter);
+    const dispatch = useAppDispatch()
+
+
+    const [maxValue, setMaxValue] = useState<number>(maxValueGl)
+    const [startValue, setStartValue] = useState<number>(startValueGl)
 
     const errorMaxValueLabel = maxValue <= startValue || maxValue < 0
     const errorStartValueLabel = startValue >= maxValue || startValue < 0
@@ -20,7 +23,7 @@ export const SettingsPanel = ({set, maxValueGl, startValueGl}: Props) => {
 
     const setValueHandler = () => {
         if (!errorMaxValueLabel && !errorStartValueLabel) {
-            set(maxValue, startValue)
+            dispatch(setValuesAC({startValue: startValue, maxValue: maxValue}))
         }
 
     }
