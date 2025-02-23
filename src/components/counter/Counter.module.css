@@ -1,0 +1,9 @@
+.counter {
+    margin: auto;
+    display: inline-block;
+    text-align: center;
+    color: #50dbe8;
+    font-style: normal;
+    font-size: 66px;
+    font-weight: bold;
+}

@@ -1,0 +1,30 @@
+.inputWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+input {
+    background: #fff;
+    min-width: 230px;
+    min-height: 30px;
+    border: 2px solid #50dbe8;
+    border-radius: 5px;
+    padding: 5px;
+
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+}
+label {
+    font-family: sans-serif;
+    font-weight: bold;
+    color: #50dbe8;
+    font-size: 30px;
+
+}
+.error {
+    background-color: rgba(206, 124, 124, 0.83);
+    border-color: red;
+}

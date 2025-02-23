@@ -1,0 +1,30 @@
+.wrapper {
+    display: flex;
+    border-radius: 10px;
+    border: 2px solid #50dbe8;
+    padding: 15px;
+}
+
+.wrapper.app {
+    flex-direction: column;
+    min-width: 550px;
+    min-height: 350px;
+    gap: 15px;
+}
+
+.wrapper.button {
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 520px;
+    height: 100px;
+    gap: 15px;
+}
+
+.wrapper.display {
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    min-width: 520px;
+    min-height: 200px;
+}
